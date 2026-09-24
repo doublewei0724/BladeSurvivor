@@ -4,7 +4,7 @@ UnityProject/[Oo]bj/
 UnityProject/[Ll]ogs/
 UnityProject/[Uu]ser[Ss]ettings/
 Builds/
-build/
+/build/
 UnityProject/Builds/
 UnityProject/.vs/
 UnityProject/.idea/
