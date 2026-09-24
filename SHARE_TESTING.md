@@ -6,7 +6,7 @@
 
 **https://doublewei0724.github.io/BladeSurvivor/**
 
-這是網頁版，不需要先安裝 Unity 或 Mac `.app`。Unity 6 官方支援桌面 Chrome、Edge、Firefox、Safari，以及支援 WebGL 2 的 iOS Safari 15+／Android Chrome 58+；此專案仍需朋友實際回報手機的載入時間與效能。PWA 安裝圖示和離線快取不是目前上線條件。
+這是網頁版，不需要先安裝 Unity 或 Mac `.app`。目前已確認公開網址可在桌面 Chrome 載入主選單。Unity 6 官方支援桌面 Chrome、Edge、Firefox、Safari，以及支援 WebGL 2 的 iOS Safari 15+／Android Chrome 58+；手機建議橫向使用，載入時間與效能仍需朋友實際回報。PWA 安裝圖示和離線快取不是目前上線條件。
 
 ## 每次更新
 
@@ -26,7 +26,7 @@ git push origin main
 
 1. Repository 的 **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**（此項已設定）。
 2. Repository 的 **Settings → Secrets and variables → Actions → New repository secret**，建立 Unity 授權資訊。不要把密碼或授權檔 commit 到 Git。
-   - Unity Personal：`UNITY_LICENSE`（授權檔內容）、`UNITY_EMAIL`、`UNITY_PASSWORD`。
+   - Unity Personal：先在 **Unity Hub → Preferences → Licenses → Add → Get a free personal license** 啟用，確認 Mac 的 `/Library/Application Support/Unity/Unity_lic.ulf` 已產生。把檔案**內容**（不是檔案路徑）設為 `UNITY_LICENSE`，再設定 `UNITY_EMAIL`、`UNITY_PASSWORD`。
    - Unity Pro：`UNITY_SERIAL`、`UNITY_EMAIL`、`UNITY_PASSWORD`。
 3. 到 **Actions → Build and deploy Unity WebGL** 執行一次 **Run workflow**，或再推一次 commit。
 4. 待 `build` 和 `deploy` 都綠燈後，打開上方分享網址。
