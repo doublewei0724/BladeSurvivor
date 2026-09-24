@@ -1,0 +1,36 @@
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "parsed": {
+          "success": true,
+          "job": {
+            "job_id": "7a64edb85314",
+            "status": "succeeded",
+            "mode": "EditMode",
+            "started_unix_ms": 1790240110907,
+            "finished_unix_ms": 1790240117401,
+            "progress": {
+              "completed": 21,
+              "total": 21,
+              "stuck_suspected": false
+            },
+            "result": {
+              "passed": 21,
+              "failed": 0,
+              "skipped": 0,
+              "inconclusive": 0,
+              "duration_seconds": 6.493
+            }
+          },
+          "is_complete": true,
+          "stuck_warning": null
+        }
+      }
+    ],
+    "isError": false
+  },
+  "id": "5b79992e-3fc4-448d-9faa-6ad8fc814654"
+}

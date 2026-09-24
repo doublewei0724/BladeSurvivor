@@ -1,0 +1,6 @@
+{
+  "name": "BladeSurvivor.Tests",
+  "references": ["BladeSurvivor.Runtime"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

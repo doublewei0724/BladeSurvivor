@@ -1,0 +1,6 @@
+{
+  "name": "BladeSurvivor.Runtime",
+  "rootNamespace": "BladeSurvivor",
+  "references": [],
+  "autoReferenced": true
+}

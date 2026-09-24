@@ -1,0 +1,468 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15963180c5e574863adc9097438ef7fb, type: 3}
+  m_Name: GameBalance
+  m_EditorClassIdentifier: BladeSurvivor.Runtime::BladeSurvivor.GameBalance
+  baseHP: 100
+  baseSP: 100
+  moveSpeed: 5
+  critChance: 0.05
+  critMultiplier: 1.5
+  scanRange: 5
+  scanInterval: 0.1
+  weaponMultipliers:
+  - 1
+  - 0.75
+  - 1.45
+  attackIntervals:
+  - 0.6
+  - 0.55
+  - 1.25
+  weaponRanges:
+  - 3
+  - 1.55
+  - 2.4
+  weaponArcs:
+  - 120
+  - 100
+  - 160
+  weaponKnockbacks:
+  - 0.55
+  - 0.25
+  - 0.7
+  knockdownDuration: 2
+  knockdownDistance: 1
+  recoveryRadius: 2
+  attackWindup: 0.15
+  attackActive: 0.12
+  attackMoveMultiplier: 0.45
+  doubleTapWindow: 0.24
+  swipeScreenFraction: 0.08
+  dodgeSP: 20
+  dodgeDuration: 0.45
+  dodgeIFrameStart: 0.1
+  dodgeIFrameEnd: 0.35
+  dodgeCooldown: 0.35
+  dodgeDistance: 6
+  swipeSP: 35
+  swipeCooldown: 0.8
+  swipeDistance: 6
+  swipeWidth: 2
+  swipeMultiplier: 1.25
+  chargeLength: 6
+  chargeStart: 0.5
+  chargeSecond: 1.5
+  chargeFull: 3
+  chargeMoveMultiplier: 0.35
+  chargeMultipliers:
+  - 1.5
+  - 2.2
+  - 3
+  chargeArcs:
+  - 160
+  - 240
+  - 360
+  chargeRanges:
+  - 2.5
+  - 3.2
+  - 4
+  chargeKnockbacks:
+  - 0.8
+  - 1.5
+  - 2.2
+  waveCount: 10
+  enemiesPerWave: 10
+  waveInterval: 15
+  starTime: 180
+  starHits: 3
+  arenaHalfSize: {x: 80, y: 80}
+  spRegen: 10
+  spRegenDelay: 0.75
+  hpPickupChance: 0.05
+  spPickupChance: 0.04
+  hpRestore: 0.15
+  spRestore: 0.2
+  pickupRadius: 2
+  valuablePickupRadius: 3
+  reviveInvulnerability: 2
+  stoneChances:
+  - 0.04
+  - 0.015
+  - 0.005
+  - 0.0015
+  bossStoneChances:
+  - 0.45
+  - 0.3
+  - 0.2
+  - 0.05
+  jadeChance: 0.009
+  bossJadeChance: 0.1
+  maxLevel: 50
+  maxUpgrade: 20
+  maxEnhance: 10
+  enhanceAttempts: 5
+  enhanceCrit: 0.2
+  enhanceBonus: 0.03
+  permanentAttack: 0.02
+  permanentDefense: 0.01
+  stoneMin: 19000000280000003700000046000000
+  stoneMax: 28000000370000004600000055000000
+  upgradeCosts: c8000000fa0000002c0100005e01000090010000c2010000260200008a020000ee020000840300001a040000e2040000aa050000a40600000208000060090000220b0000160d00006e0f00002a120000
+  skillUpgradeCosts: 58020000b004000060090000c0120000
+  tierLevels: 010000000a000000140000001e0000002800000032000000
+  shopPrices: 1e000000320000004b000000690000008c000000b4000000
+  swordMin: 090000000d000000130000001b0000002600000034000000
+  swordMax: 0b0000001000000017000000210000002e00000040000000
+  suitDEF: 0200000004000000070000000b0000001000000016000000
+  rarityMultipliers:
+  - 1
+  - 1.1
+  - 1.25
+  - 1.45
+  - 1.7
+  normalHP:
+  - 20
+  - 35
+  - 60
+  - 95
+  - 145
+  - 210
+  assassinHP:
+  - 15
+  - 26
+  - 45
+  - 70
+  - 105
+  - 150
+  archerHP:
+  - 18
+  - 30
+  - 52
+  - 82
+  - 125
+  - 180
+  heavyHP:
+  - 45
+  - 80
+  - 135
+  - 210
+  - 320
+  - 460
+  bossHP:
+  - 250
+  - 500
+  - 900
+  - 1500
+  - 2300
+  - 3400
+  normalDamage:
+  - 8
+  - 14
+  - 22
+  - 32
+  - 45
+  - 60
+  assassinDamage:
+  - 6
+  - 11
+  - 17
+  - 25
+  - 35
+  - 47
+  archerDamage:
+  - 7
+  - 12
+  - 19
+  - 28
+  - 40
+  - 53
+  heavyDamage:
+  - 15
+  - 25
+  - 40
+  - 58
+  - 82
+  - 110
+  bossDamage:
+  - 20
+  - 35
+  - 55
+  - 80
+  - 110
+  - 150
+  enemies:
+  - kind: 0
+    title: "\u5931\u843D\u885B\u5175"
+    hp: 20
+    damage: 8
+    speed: 2.2
+    range: 1.15
+    windup: 0.45
+    recovery: 0.45
+    cooldown: 1.15
+    knockback: 1
+  - kind: 1
+    title: "\u66AE\u5F71\u523A\u5BA2"
+    hp: 15
+    damage: 6
+    speed: 3.2
+    range: 1
+    windup: 0.28
+    recovery: 0.3
+    cooldown: 0.85
+    knockback: 1.2
+  - kind: 2
+    title: "\u7070\u71FC\u5F29\u624B"
+    hp: 18
+    damage: 7
+    speed: 1.8
+    range: 6
+    windup: 0.55
+    recovery: 0.4
+    cooldown: 1.5
+    knockback: 1
+  - kind: 3
+    title: "\u9ED1\u9435\u5B88\u885B"
+    hp: 45
+    damage: 15
+    speed: 1.4
+    range: 1.5
+    windup: 0.85
+    recovery: 0.7
+    cooldown: 1.8
+    knockback: 0.3
+  - kind: 4
+    title: "\u5DE8\u65A7\u4EA1\u5C07"
+    hp: 250
+    damage: 20
+    speed: 1.65
+    range: 3
+    windup: 0.8
+    recovery: 0.65
+    cooldown: 1.6
+    knockback: 0
+  skills:
+  - title: "\u65CB\u98A8\u65AC"
+    description: "\u65CB\u8EAB\u65AC\u64CA\u5468\u570D\u6575\u4EBA\uFF0C\u9020\u6210\u64CA\u9000\u3002"
+    unlock: 1
+    cost: 0
+    multiplier: 1.6
+    range: 3
+    arc: 360
+    cooldown: 8
+    duration: 0
+  - title: "\u528D\u6C23\u65AC"
+    description: "\u5411\u524D\u91CB\u653E\u7A7F\u900F\u528D\u6C23\uFF0C\u8CAB\u7A7F\u9060\u65B9\u6575\u4EBA\u3002"
+    unlock: 3
+    cost: 500
+    multiplier: 1.8
+    range: 7
+    arc: 45
+    cooldown: 7
+    duration: 0
+  - title: "\u6230\u610F"
+    description: "8 \u79D2\u5167\u653B\u64CA +20%\uFF0C\u653B\u901F +15%\u3002"
+    unlock: 6
+    cost: 1200
+    multiplier: 1
+    range: 0
+    arc: 0
+    cooldown: 20
+    duration: 8
+  - title: "\u9707\u5730\u65AC"
+    description: "\u5411\u524D\u5288\u51FA\u534A\u5713\u91CD\u64CA\uFF0C\u5F37\u529B\u64CA\u9000\u6575\u4EBA\u3002"
+    unlock: 9
+    cost: 2200
+    multiplier: 2.4
+    range: 3.5
+    arc: 180
+    cooldown: 12
+    duration: 0
+  - title: "\u8840\u5203"
+    description: "6 \u79D2\u5167\u5438\u53D6\u9020\u6210\u50B7\u5BB3\u7684 5%\uFF0C\u6BCF\u64CA\u6700\u591A\u6062\u5FA9
+      5% HP\u3002"
+    unlock: 12
+    cost: 3500
+    multiplier: 1
+    range: 0
+    arc: 0
+    cooldown: 25
+    duration: 6
+  - title: "\u4E82\u821E"
+    description: "2 \u79D2\u5167\u9023\u7E8C 5 \u6B21\u65AC\u64CA\uFF0C\u65BD\u653E\u6642\u9738\u9AD4\u3002"
+    unlock: 15
+    cost: 5200
+    multiplier: 0.7
+    range: 2.8
+    arc: 180
+    cooldown: 18
+    duration: 2
+  - title: "\u7121\u96D9\u65AC"
+    description: "\u4EE5\u9738\u9AD4\u91CB\u653E\u5168\u5468\u5927\u7BC4\u570D\u65AC\u64CA\u3002"
+    unlock: 18
+    cost: 7500
+    multiplier: 4.5
+    range: 4.5
+    arc: 360
+    cooldown: 30
+    duration: 0
+  stages:
+  - title: "\u7070\u71FC\u4E4B\u9580"
+    subtitle: "\u7B2C 1 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 1
+    boss: 0
+  - title: "\u65B7\u6A4B\u9918\u71FC"
+    subtitle: "\u7B2C 1 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 3
+    boss: 0
+  - title: "\u4EA1\u5C07\u7684\u8A93\u8A00"
+    subtitle: "\u7B2C 1 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 5
+    boss: 1
+  - title: "\u7121\u8072\u4FEE\u9053\u9662"
+    subtitle: "\u7B2C 1 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 7
+    boss: 0
+  - title: "\u66AE\u8272\u9577\u5ECA"
+    subtitle: "\u7B2C 1 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 9
+    boss: 0
+  - title: "\u9ED1\u9435\u738B\u5EA7"
+    subtitle: "\u7B2C 1 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 11
+    boss: 1
+  - title: "\u7070\u71FC\u4E4B\u9580"
+    subtitle: "\u7B2C 2 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 13
+    boss: 0
+  - title: "\u65B7\u6A4B\u9918\u71FC"
+    subtitle: "\u7B2C 2 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 15
+    boss: 0
+  - title: "\u4EA1\u5C07\u7684\u8A93\u8A00"
+    subtitle: "\u7B2C 2 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 17
+    boss: 1
+  - title: "\u7121\u8072\u4FEE\u9053\u9662"
+    subtitle: "\u7B2C 2 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 19
+    boss: 0
+  - title: "\u66AE\u8272\u9577\u5ECA"
+    subtitle: "\u7B2C 2 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 21
+    boss: 0
+  - title: "\u9ED1\u9435\u738B\u5EA7"
+    subtitle: "\u7B2C 2 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 23
+    boss: 1
+  - title: "\u7070\u71FC\u4E4B\u9580"
+    subtitle: "\u7B2C 3 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 25
+    boss: 0
+  - title: "\u65B7\u6A4B\u9918\u71FC"
+    subtitle: "\u7B2C 3 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 27
+    boss: 0
+  - title: "\u4EA1\u5C07\u7684\u8A93\u8A00"
+    subtitle: "\u7B2C 3 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 29
+    boss: 1
+  - title: "\u7121\u8072\u4FEE\u9053\u9662"
+    subtitle: "\u7B2C 3 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 31
+    boss: 0
+  - title: "\u66AE\u8272\u9577\u5ECA"
+    subtitle: "\u7B2C 3 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 33
+    boss: 0
+  - title: "\u9ED1\u9435\u738B\u5EA7"
+    subtitle: "\u7B2C 3 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 35
+    boss: 1
+  - title: "\u7070\u71FC\u4E4B\u9580"
+    subtitle: "\u7B2C 4 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 37
+    boss: 0
+  - title: "\u65B7\u6A4B\u9918\u71FC"
+    subtitle: "\u7B2C 4 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 39
+    boss: 0
+  - title: "\u4EA1\u5C07\u7684\u8A93\u8A00"
+    subtitle: "\u7B2C 4 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 41
+    boss: 1
+  - title: "\u7121\u8072\u4FEE\u9053\u9662"
+    subtitle: "\u7B2C 4 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 43
+    boss: 0
+  - title: "\u66AE\u8272\u9577\u5ECA"
+    subtitle: "\u7B2C 4 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 45
+    boss: 0
+  - title: "\u9ED1\u9435\u738B\u5EA7"
+    subtitle: "\u7B2C 4 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 47
+    boss: 1
+  - title: "\u7070\u71FC\u4E4B\u9580"
+    subtitle: "\u7B2C 5 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 49
+    boss: 0
+  - title: "\u65B7\u6A4B\u9918\u71FC"
+    subtitle: "\u7B2C 5 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 50
+    boss: 0
+  - title: "\u4EA1\u5C07\u7684\u8A93\u8A00"
+    subtitle: "\u7B2C 5 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 50
+    boss: 1
+  - title: "\u7121\u8072\u4FEE\u9053\u9662"
+    subtitle: "\u7B2C 5 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u57CE\u9580\u5DF2\u7D93\u7184\u71C8\u3002\u98A8\u88E1\u4ECD\u6709\u9435\u8207\u7070\u71FC\u7684\u5473\u9053\u3002\n\u6709\u4EBA\u9084\u5728\u7B49\u4F60\u56DE\u53BB\u3002\u63E1\u7DCA\u528D\uFF0C\u7A7F\u904E\u9019\u7247\u5EE2\u589F\u3002"
+    level: 50
+    boss: 0
+  - title: "\u66AE\u8272\u9577\u5ECA"
+    subtitle: "\u7B2C 5 \u7AE0 \xB7 \u6BB2\u6EC5\u6230"
+    story: "\u6A4B\u4E0B\u6C92\u6709\u6D41\u6C34\uFF0C\u53EA\u6709\u820A\u65E5\u7684\u56DE\u8072\u3002\n\u4ED6\u5011\u5F9E\u5169\u5074\u903C\u8FD1\u3002\u4E0D\u8981\u505C\u4E0B\u8173\u6B65\u3002"
+    level: 50
+    boss: 0
+  - title: "\u9ED1\u9435\u738B\u5EA7"
+    subtitle: "\u7B2C 5 \u7AE0 \xB7 \u9996\u9818\u6230"
+    story: "\u4EA1\u5C07\u5B88\u8457\u6700\u5F8C\u4E00\u9053\u9580\uFF0C\u5FD8\u4E86\u81EA\u5DF1\u66FE\u7D93\u5B88\u8B77\u8AB0\u3002\n\u770B\u6E05\u4ED6\u7684\u8D77\u624B\u3002\u7B49\u65A7\u5203\u843D\u4E0B\uFF0C\u518D\u51FA\u528D\u3002"
+    level: 50
+    boss: 1
