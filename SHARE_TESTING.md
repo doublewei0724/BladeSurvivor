@@ -18,13 +18,13 @@ git commit -m "描述這次修改"
 git push origin main
 ```
 
-`.github/workflows/deploy-webgl.yml` 會在推送 `main` 後，用 Unity 6000.3.24f1 自動建置 WebGL，並將 `build/WebGL` 部署到 GitHub Pages。朋友使用同一網址，重新整理後即可玩新版。可在 repository 的 **Actions** 分頁確認建置與部署是否成功。
+`.github/workflows/deploy-webgl.yml` 會在推送 `main` 後，用 Unity 6000.3.24f1 自動建置 WebGL，並將 `build/WebGL` 部署到 GitHub Pages。朋友使用同一網址，重新整理後即可玩新版。可在 repository 的 **Actions** 分頁確認建置與部署是否成功。**必須先完成下方 Unity 授權 Secrets 設定**；在此之前，網址顯示的是已發布的初版，推送原始碼不會更新遊戲。
 
 本地的 `Builds/Blade Survivor.app` 與 Unity `Library` 不會被上傳。GitHub Pages 的 WebGL 遊戲以原始碼重新編譯，和 Mac `.app` 是不同平台的建置。
 
 ## 首次啟用 GitHub Actions
 
-1. Repository 的 **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**。
+1. Repository 的 **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**（此項已設定）。
 2. Repository 的 **Settings → Secrets and variables → Actions → New repository secret**，建立 Unity 授權資訊。不要把密碼或授權檔 commit 到 Git。
    - Unity Personal：`UNITY_LICENSE`（授權檔內容）、`UNITY_EMAIL`、`UNITY_PASSWORD`。
    - Unity Pro：`UNITY_SERIAL`、`UNITY_EMAIL`、`UNITY_PASSWORD`。
@@ -33,7 +33,7 @@ git push origin main
 
 Unity Personal 的 CI 授權檔取得步驟依 GameCI 官方文件：[GameCI Activation](https://game.ci/docs/github/activation/)。Unity 帳號密碼只放在 GitHub Actions Secrets，勿傳給測試朋友，也不要放在聊天室或專案檔案。
 
-若 Build 顯示缺少 Unity 授權，請先設定 Secrets；原始碼已推上 GitHub 不代表網頁建置已成功。若 Pages 顯示 404，檢查 Pages Source 是否為 GitHub Actions，再看 Actions 的 `deploy` 工作。
+若 Build 顯示缺少 Unity 授權，請先設定 Secrets；原始碼已推上 GitHub 不代表新版網頁建置已成功。初版由 `.github/workflows/publish-initial-webgl.yml` 發布一次；日後正常更新使用上述自動建置流程。若 Pages 顯示 404，檢查 Pages Source 是否為 GitHub Actions，再看 Actions 的 `deploy` 工作。
 
 ## 本機先建網頁版
 

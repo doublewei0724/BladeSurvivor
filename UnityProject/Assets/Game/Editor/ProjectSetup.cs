@@ -41,7 +41,7 @@ public static class ProjectSetup {
         string path=Path.GetFullPath(Path.Combine(projectRoot,"..","build","WebGL"));Directory.CreateDirectory(path);
         var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{"Assets/Game/Scenes/BattlePrototype.unity"},locationPathName=path,target=BuildTarget.WebGL,options=BuildOptions.None});
         Debug.Log("BLADE_WEBGL_BUILD "+report.summary.result+" "+report.summary.totalErrors);
-        if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new Exception("WebGL build failed");
+        if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded||report.summary.totalErrors>0||!File.Exists(Path.Combine(path,"index.html")))throw new Exception("WebGL build failed");
         File.WriteAllText(Path.Combine(path,".nojekyll"),string.Empty);
     }
 }
