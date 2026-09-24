@@ -27,6 +27,7 @@ git push origin main
 1. Repository 的 **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**（此項已設定）。
 2. Repository 的 **Settings → Secrets and variables → Actions → New repository secret**，建立 Unity 授權資訊。不要把密碼或授權檔 commit 到 Git。
    - Unity Personal：先在 **Unity Hub → Preferences → Licenses → Add → Get a free personal license** 啟用，確認 Mac 的 `/Library/Application Support/Unity/Unity_lic.ulf` 已產生。把檔案**內容**（不是檔案路徑）設為 `UNITY_LICENSE`，再設定 `UNITY_EMAIL`、`UNITY_PASSWORD`。
+   - 若平常用 **Google 登入 Unity**：在 [Unity ID 重設密碼](https://id.unity.com/en/password/new) 輸入同一個 Google 信箱，依郵件設定 **Unity ID 專用密碼**。`UNITY_EMAIL` 填該信箱，`UNITY_PASSWORD` 填新設的 Unity 密碼；不使用 Google 帳號密碼。完成後先用信箱與新密碼登入 Unity 網站確認有效。重設密碼可能讓 Unity Editor 登出，依提示重新登入即可。
    - Unity Pro：`UNITY_SERIAL`、`UNITY_EMAIL`、`UNITY_PASSWORD`。
 3. 到 **Actions → Build and deploy Unity WebGL** 執行一次 **Run workflow**，或再推一次 commit。
 4. 待 `build` 和 `deploy` 都綠燈後，打開上方分享網址。
